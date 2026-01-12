@@ -1,0 +1,35 @@
+{
+  "Posts": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Test Post 1",
+      "body": "This is test post body 1"
+    },
+    {
+      "userId": 2,
+      "id": 2,
+      "title": "Test Post 2",
+      "body": "This is test post body 2"
+    },
+    {
+      "userId": 3,
+      "id": 3,
+      "title": "Test Post 3",
+      "body": "This is test post body 3"
+    }
+  ],
+  "InvalidData": {
+    "EmptyTitle": {
+      "userId": 1,
+      "title": "",
+      "body": "Body without title"
+    },
+    "NegativeId": {
+      "userId": -1,
+      "id": -999,
+      "title": "Negative ID Test",
+      "body": "Testing negative ID"
+    }
+  }
+}
