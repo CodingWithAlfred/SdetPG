@@ -1,0 +1,42 @@
+name: Sdet Test Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test: [RestAPIApp, UIPrometheusJobSearchTest]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      
+      - name: Restore and Build
+        run: |
+          dotnet restore
+          dotnet build --no-restore
+      
+      - name: Setup Playwright
+        if: matrix.test == 'UIPrometheusJobSearchTest'
+        run: |
+          dotnet tool install --global Microsoft.Playwright.CLI || true
+          playwright install --with-deps
+      
+      - name: Run Tests
+        run: dotnet test --filter ${{ matrix.test }} --logger "trx"
+      
+      - name: Upload Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.test }}-results
+          path: "**/TestResults/*.trx"
