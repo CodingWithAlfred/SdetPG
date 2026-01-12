@@ -1,0 +1,46 @@
+## --- Visual Studio ---
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.ide/
+
+## --- .NET / NuGet ---
+## Packages are restored via CI/CD, do not commit them
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.assets.json
+
+## --- Playwright ---
+## Playwright downloads browser binaries (Chromium, Firefox, Webkit) locally
+.playwright/
+ms-playwright/
+playwright-log.txt
+
+## --- Test Results & Artifacts ---
+TestResults/
+*.trx
+*.log
+**/screenshots/
+**/videos/
+**/traces/
+allure-results/
+ExtentReports/
+
+## --- Configuration & Secrets ---
+appsettings.Local.json
+*.secret.json
+.env
+
+## --- Operating System ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
