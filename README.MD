@@ -104,7 +104,7 @@ The REST API testing framework demonstrates core API validation capabilities:
 - ✅ Data integrity verification
 - ✅ Error response handling
 
-**Status:** ✅ Local Build Passed | ✅ CI Build Passed
+**Status:** ✅ Local Build and Test Passed | ✅ CI Build and Test Passed
 
 ## 🎭 UI Automation Testing
 
@@ -122,7 +122,7 @@ The Playwright-based UI testing framework focuses on job search automation workf
 3. Validate page elements and accordions
 4. Search for Senior SDET position
 
-**Status:** ✅ Local Build Passed | ⚠️ CI Build Issues (Google bot detection)
+**Status:** ✅ Local Build, Test and CI Build Passed | ⚠️ CI Test Run Issues (Google bot detection)
 
 [↑ Back to top](#c-net-nunit-testing-framework-with-rest-api-and-playwright-ui-automation)
 
